@@ -39,48 +39,50 @@ headline : {
     type : String,
     default : ""
 },
-skills : [{type : string}],
+skills : [{type : String}],
 
 education:[{
     college : {
-        type: string
+        type: String
     },
     degree : {
-        type: string
+        type: String
     },
     fieldOfStudy : {
-        type: string
+        type: String
     },
 }],
 
 location:{
-    type : string
+    type : String
 },
 
 gender : {
-    type : string,
+    type : String,
     enum : ["male" , "female" , "others"]
 },
 
 experience : [{
     title:{
-        type : string
+        type : String
     },
   company:{
-        type : string
+        type : String
     },
 
       description:{
-        type : string
+        type : String
     }
 
 }],
 
 
-connection : [{ type: mongoose.Schema.Types.ObjectId}]
-
-
-
+connection : [
+    { type: mongoose.Schema.Types.ObjectId ,
+         ref :  "User"
+}
+    
+]
 
 } , {timestamps : true})
 
